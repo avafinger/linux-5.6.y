@@ -143,9 +143,9 @@
     wifi_pwrseq: wifi_pwrseq {
         compatible = "mmc-pwrseq-simple";
         pinctrl-names = "default";
-        // pinctrl-0 = <&wifi_en_bpi>;
         reset-gpios = <&r_pio 0 7 GPIO_ACTIVE_LOW>; /* PL7 */
-        // post-power-on-delay-ms = <200>;
+        clocks = <&rtc 1>;
+		clock-names = "ext_clock";        
     };
     
 
