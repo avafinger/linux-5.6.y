@@ -1,2 +1,3 @@
 # linux-5.6.y
-Linux 5.6.y - BananaPi M2Z
+
+Kernel 5.6.y BPI-M2Z
