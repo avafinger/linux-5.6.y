@@ -160,10 +160,10 @@ static void sun8i_csc_set_coefficients(struct regmap *map, u32 base,
 
 	switch (mode) {
 	case SUN8I_CSC_MODE_YUV2RGB:
-		table = yuv2rgb[range][encoding];
+		table = yuv2rgb[DRM_COLOR_YCBCR_FULL_RANGE][encoding];
 		break;
 	case SUN8I_CSC_MODE_YVU2RGB:
-		table = yvu2rgb[range][encoding];
+		table = yvu2rgb[DRM_COLOR_YCBCR_FULL_RANGE][encoding];
 		break;
 	default:
 		DRM_WARN("Wrong CSC mode specified.\n");
@@ -184,10 +184,10 @@ static void sun8i_de3_ccsc_set_coefficients(struct regmap *map, int layer,
 
 	switch (mode) {
 	case SUN8I_CSC_MODE_YUV2RGB:
-		table = yuv2rgb_de3[range][encoding];
+		table = yuv2rgb_de3[DRM_COLOR_YCBCR_FULL_RANGE][encoding];
 		break;
 	case SUN8I_CSC_MODE_YVU2RGB:
-		table = yvu2rgb_de3[range][encoding];
+		table = yvu2rgb_de3[DRM_COLOR_YCBCR_FULL_RANGE][encoding];
 		break;
 	default:
 		DRM_WARN("Wrong CSC mode specified.\n");
