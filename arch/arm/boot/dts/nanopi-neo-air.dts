@@ -56,15 +56,15 @@
 
 	aliases {
 		ethernet0 = &emac;
-        	ethernet1 = &brcmf;
+        ethernet1 = &brcmf;
 		serial0 = &uart0;
 		serial1 = &uart1;
 		serial2 = &uart2;
 		serial3 = &uart3;
 		i2c0 = &i2c0;
 		i2c1 = &i2c1;
-        	i2c2 = &i2c2;
-   		spi0 = &spi0;
+        i2c2 = &i2c2;
+        spi0 = &spi0;
 		/* spi1 = &spi1; */
 		spidev0 = &spidev0;
 		spiflash = &spiflash;
@@ -112,7 +112,7 @@
         pinctrl-names = "default";
         reset-gpios = <&r_pio 0 7 GPIO_ACTIVE_LOW>; /* PL7 */
         clocks = <&rtc 1>;
-	clock-names = "ext_clock";        
+        clock-names = "ext_clock";        
     };
     
 
@@ -546,7 +546,20 @@
 &uart3 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&uart3_pins>, <&uart3_rts_cts_pins>;
+	uart-has-rtscts;
 	status = "okay";
+
+	bluetooth {
+		compatible = "brcm,bcm43438-bt";
+		max-speed = <1500000>;		
+		clocks = <&rtc 1>;
+		clock-names = "lpo";
+		vbat-supply = <&reg_vcc3v3>;
+		vddio-supply = <&reg_vcc3v3>;
+		device-wakeup-gpios = <&pio 0 8 GPIO_ACTIVE_HIGH>; /* PA8 */
+		host-wakeup-gpios = <&pio 0 7 GPIO_ACTIVE_HIGH>; /* PA7 */
+		shutdown-gpios = <&pio 6 13 GPIO_ACTIVE_HIGH>; /* PG13 */
+	};
 };
 
 &usb_otg {
