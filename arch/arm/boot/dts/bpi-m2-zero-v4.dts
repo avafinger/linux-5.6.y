@@ -56,21 +56,21 @@
 
 	aliases {
 		ethernet0 = &emac;
-        ethernet1 = &brcmf;
+        	ethernet1 = &brcmf;
 		serial0 = &uart0;
-        serial1 = &uart1;
-        serial2 = &uart2;
-        serial3 = &uart3;
-        i2c0 = &i2c0;
+		serial1 = &uart1;
+		serial2 = &uart2;
+		serial3 = &uart3;
+		i2c0 = &i2c0;
 		i2c1 = &i2c1;
-        i2c2 = &i2c2;
+        	i2c2 = &i2c2;
    		spi0 = &spi0;
 		/* spi1 = &spi1; */
-        spidev0 = &spidev0;
-        spiflash = &spiflash;
-        pitft = &pitft;
-        pitft_ts = &pitft_ts;
-        mmc0 = &mmc0;
+		spidev0 = &spidev0;
+		spiflash = &spiflash;
+		pitft = &pitft;
+		pitft_ts = &pitft_ts;
+		mmc0 = &mmc0;
 	};
 
 	chosen {
@@ -94,9 +94,9 @@
 			clocks = <&ccu CLK_CSI_MCLK>;
 			clock-names = "xclk";
 
-            AVDD-supply = <&reg_cam_avdd>;
-            DOVDD-supply = <&reg_cam_dovdd>;
-            DVDD-supply = <&reg_cam_dvdd>;
+	    AVDD-supply = <&reg_cam_avdd>;
+	    DOVDD-supply = <&reg_cam_dovdd>;
+	    DVDD-supply = <&reg_cam_dvdd>;
 			reset-gpios = <&pio 4 14 GPIO_ACTIVE_LOW>; /* CSI0-RST: PE14 */
 			powerdown-gpios = <&pio 4 15 GPIO_ACTIVE_HIGH>; /* CSI0-PWDN: PE15 */
 
@@ -145,7 +145,7 @@
         pinctrl-names = "default";
         reset-gpios = <&r_pio 0 7 GPIO_ACTIVE_LOW>; /* PL7 */
         clocks = <&rtc 1>;
-		clock-names = "ext_clock";        
+        clock-names = "ext_clock";        
     };
     
 
