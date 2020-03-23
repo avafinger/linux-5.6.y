@@ -10,6 +10,8 @@ DTS for each board follow the board name convention which i find it more usefull
 * add support for Bluetooth
 * add Kernel 5.6.0-rc4
 * add Kernel 5.6.0-rc5
+* add Kernel 5.6.0-rc6
+* add Kernel 5.6.0-rc7
 
 # ToDo
 
